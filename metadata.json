@@ -1,0 +1,15 @@
+{
+  "name": "clay-dnsmasq",
+  "version": "0.1.0",
+  "author": "clay",
+  "summary": "Mask a given list of domains with the specified IP address",
+  "license": "Apache-2.0",
+  "source": "github.com/cmentzer/dnsmasq",
+  "project_page": "https://github.com/cmentzer/dnsmasq",
+  "issues_url": "https://github.com/cmentzer/dnsmasq/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
