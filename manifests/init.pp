@@ -10,10 +10,11 @@ class dnsmasq {
 
   service { 'dnsmasq.service':
     ensure => running,
-    before => 'dnsmasq',
+    require => Package['dnsmasq']
   }
 
   file { 'dnsmasq.conf':
-    ensure => file,
+    ensure  => file,
+    require => Package['dnsmasq']
   }
 }
