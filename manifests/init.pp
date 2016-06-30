@@ -27,6 +27,7 @@ class dnsmasq (
   # ensure that the config file is present and provide defaults 
   # for the spoofed hostnames.
   file { "$config_path":
+    notify{"the value of spoofed sites is ${spoofed_sites}":}
     ensure  => file,
     require => Package['dnsmasq'],
     content => epp($config_template,
