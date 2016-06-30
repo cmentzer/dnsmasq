@@ -4,8 +4,7 @@
 
 class dnsmasq (
 
-  $spoofed_hostnames  = $dnsmasq::params::spoofed_hostnames,
-  $spoofed_addresses  = $dnsmasq::params::spoofed_addresses,
+  $spoofed_sites      = $dnsmasq::params::spoofed_sites,
   $config_template    = $dnsmasq::params::config_template,
   $config_path        = $dnsmasq::params::config_path
 
@@ -31,8 +30,8 @@ class dnsmasq (
     ensure  => file,
     require => Package['dnsmasq'],
     content => epp("$config_template",
-        { 'spoofed_hostnames' => $spoofed_hostnames,
-          'spoofed_addresses' => $spoofed_addresses
+        { 
+          'spoofed_sites' => $spoofed_sites,
         })
 	}
 }
