@@ -64,7 +64,7 @@
 # webserver.
 address=/doubleclick.net/127.0.0.1
 <% [$spoofed_sites].each |$site| { -%>
-    address=/<%= $site %>/<%= $site %>
+    address=/<%= $site['hostname'] %>/<%= $site['address'] %>
 <% } -%>
 
 # --address (and --server) work with IPv6 addresses too.
