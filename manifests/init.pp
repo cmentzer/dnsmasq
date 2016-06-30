@@ -4,12 +4,12 @@
 
 class dnsmasq (
 
-  $spoofed_hostnames  = $ntp::params::spoofed_hostnames,
-  $spoofed_addresses  = $ntp::params::spoofed_addresses,
-  $config_template    = $ntp::params::config_template,
-  $config_path        = $ntp::params::config_path
+  $spoofed_hostnames  = $dnsmasq::params::spoofed_hostnames,
+  $spoofed_addresses  = $dnsmasq::params::spoofed_addresses,
+  $config_template    = $dnsmasq::params::config_template,
+  $config_path        = $dnsmasq::params::config_path
 
-) inherits ntp::params {
+) inherits dnsmasq::params {
   
   # ensure the dnsmasq package is present
   package { 'dnsmasq':
