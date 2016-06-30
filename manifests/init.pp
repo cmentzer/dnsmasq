@@ -29,7 +29,7 @@ class dnsmasq (
   file { "$config_path":
     ensure  => file,
     require => Package['dnsmasq'],
-    content => epp("$config_template",
+    content => epp($config_template,
         { 
           'spoofed_sites' => $spoofed_sites,
         })
