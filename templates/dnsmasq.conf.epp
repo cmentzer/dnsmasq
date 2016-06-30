@@ -63,10 +63,9 @@
 # The example below send any host in doubleclick.net to a local
 # webserver.
 address=/doubleclick.net/127.0.0.1
-<% $spoofed_sites.each |$site| { -%>
-    address=/<%= $site -%>/<%= $site -%>
-  <% } -%>
-<% end -%>
+<% [$spoofed_sites.each] |$site| { -%>
+    address=/<%= $site %>/<%= $site %>
+<% } -%>
 
 # --address (and --server) work with IPv6 addresses too.
 #address=/www.thekelleys.org.uk/fe80::20d:60ff:fe36:f83
