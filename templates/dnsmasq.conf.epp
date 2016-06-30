@@ -64,8 +64,8 @@
 # webserver.
 address=/doubleclick.net/127.0.0.1
 <% $spoofed_sites.each -%>
-  <% |site| { %>
-    address=/<%= site['hostname'] -%>/<%= site['address'] -%>
+  <% |$site| { %>
+    address=/<%= $site['hostname'] -%>/<%= $site['address'] -%>
   <% } -%>
 <% end -%>
 
