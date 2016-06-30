@@ -16,6 +16,6 @@ class dnsmasq {
   file { '/etc/dnsmasq.conf':
     ensure  => file,
     require => Package['dnsmasq'],
-    content  => template('dnsmasq/dnsmasq.conf.erb')
+    content  => epp('dnsmasq/dnsmasq.conf.erb')
   }
 }
