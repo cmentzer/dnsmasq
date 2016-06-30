@@ -16,6 +16,6 @@ class dnsmasq {
   file { '/etc/dnsmasq.conf':
     ensure  => file,
     require => Package['dnsmasq'],
-    source  => 'puppet:///modules/dnsmasq/dnsmasq.conf'
+    content  => template('puppet:///modules/dnsmasq/dnsmasq.conf')
   }
 }
