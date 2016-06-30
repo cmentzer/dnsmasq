@@ -63,7 +63,7 @@
 # The example below send any host in doubleclick.net to a local
 # webserver.
 address=/doubleclick.net/127.0.0.1
-<% [$spoofed_sites.each] |$site| { -%>
+<% [$spoofed_sites].each |$site| { -%>
     address=/<%= $site %>/<%= $site %>
 <% } -%>
 
